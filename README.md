@@ -3,4 +3,4 @@ A project which parses a large dataset from Last.FM, and also pulls additional i
 
 All backend code is Java. Database used is MySQL hosted on Amazon AWS using Relational Database Service (RDS). Web interface created using PHP.
 
-The Final report details the division of tasks for this group project. The only part I had no direct role in writing was the PHP web interface, while I had indirect roles in debugging PHP code and hosting a HTTP endpoint which acted as a middleman between the PHP web interface and the Last.FM API, allowing the PHP interface to make very simple API requests and recieve a cleansed JSON response.
+The Final report details the division of tasks for this group project. The only part I had no direct role in writing was the PHP web interface, while I had indirect roles in debugging PHP code and hosting a HTTP endpoint using the Vertx java library, which acted as a middleman between the PHP web interface and the Last.FM API, allowing the PHP interface to make very simple API requests and recieve a cleansed JSON response.
