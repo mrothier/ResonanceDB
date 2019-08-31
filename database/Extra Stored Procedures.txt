@@ -1,0 +1,41 @@
+create procedure simulateUserLikes(user bigint)
+begin
+declare isUser bigint default 0;
+declare artist bigint default 0;
+declare track varchar(255) default 'Does not exist';
+
+set isUser = (Select count(*) from users where uID = user);
+
+if isUser = 1 then
+set artist = (Select aID from uses where uID = user limit 1);
+set track = (Select trName from compose natural join tracks where aID = artist limit 1);
+call generateLikedTrack(track, user);
+set track = (Select trName from compose natural join tracks where aID = artist limit 1,1);
+call generateLikedTrack(track, user);
+
+set artist = (Select aID from uses where uID = user limit 1,1);
+set track = (Select trName from compose natural join tracks where aID = artist limit 1);
+call generateLikedTrack(track, user);
+set track = (Select trName from compose natural join tracks where aID = artist limit 1,1);
+call generateLikedTrack(track, user);
+end if;
+end $$
+
+
+
+
+create procedure generateLikedTrack(trackName varchar(255), user bigint)    
+begin    
+declare track bigint default 0;         
+set track = (Select trID from tracks where trName = trackName limit 1);   
+insert into likes(uID, trID) values (user, track);    
+end $$
+
+create procedure composeTrack(trackName varchar(255), artName varchar(255))    
+begin    
+declare track bigint default 0;    
+declare artist bigint default 0;      
+set track = (Select trID from tracks where trName = trackName);    
+set artist = (Select aID from artists where aName = artName);
+insert into compose(aID, trID) values (artist, track);    
+end $$

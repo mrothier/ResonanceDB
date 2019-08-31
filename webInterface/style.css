@@ -1,0 +1,33 @@
+#frame{
+border: solid gray 1px;
+border-radius: 5px;
+margin: 50px auto;
+background:#00bfff;
+
+}
+h4{
+text-align: center;
+
+}
+input[type=text] {
+	width: 50%;
+	margin: 0 auto;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+input[type=password]{
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button[type=submit]{
+	margin:0 auto;
+}
+button[type=reset]{
+	
+	margin: 0 auto;
+
+}
