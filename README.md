@@ -1,0 +1,2 @@
+# ResonanceDB
+A project which parses a large dataset from Last.FM, and also pulls additional information from the Last.FM API, stores this information into an SQL database, and presents the user with a web interface which allows them to discover new music based on music they already like, by inputting a song, an artist, or a descriptive tag and finding related songs or artists. All backend code is Java. Database used is MySQL. Web interface created using PHP. 
